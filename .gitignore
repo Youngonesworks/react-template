@@ -10,6 +10,8 @@
 
 # production
 /build
+# semi-production 
+/src/assets/main.css
 
 # misc
 .DS_Store
