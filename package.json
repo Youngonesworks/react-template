@@ -14,9 +14,12 @@
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
     "prebuild": "npx shx rm -rf /dist",
+    "help:prebuild": "echo This command uses shx to make sure it works on both *nix and Windows",
     "build": "npm run watch:css && react-scripts build",
     "postbuild": "npx shx mv build dist",
-    "watch:css": "npx tailwindcss build src/assets/tailwind.css -o src/assets/main.css",    
+    "help:postbuild": "echo CRA builds to ./build by default. This command moves it ./dist to make sure DigitalOcean Apps can find the correct folder",
+    "watch:css": "npx tailwindcss build src/assets/tailwind.css -o src/assets/main.css",
+    "help:watch:css": "echo This command uses TailwindCLI to purge the tailwind.css file and build it as main.css - ALSO ON DEV",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
