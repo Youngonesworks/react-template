@@ -13,10 +13,12 @@
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
+    "prebuild": "npx shx rm -rf /dist",
     "build": "npm run watch:css && react-scripts build",
+    "postbuild": "npx shx mv build dist",
+    "watch:css": "npx tailwindcss build src/assets/tailwind.css -o src/assets/main.css",    
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "watch:css": "npx tailwindcss build src/assets/tailwind.css -o src/assets/main.css"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
